@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { MissionPageRoutingModule } from './mission-routing.module';
 
 import { MissionPage } from './mission.page';
+import { MissionButtonComponent } from '../../components/mission-button/mission-button.component'
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { MissionPage } from './mission.page';
     IonicModule,
     MissionPageRoutingModule
   ],
-  declarations: [MissionPage]
+  declarations: [MissionPage,MissionButtonComponent]
 })
 export class MissionPageModule {}

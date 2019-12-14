@@ -1,0 +1,67 @@
+.wrapper-mission{
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+    
+}
+.contaner-mission-botton{
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+    height: 65px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Prompt';
+    background-color: #fff;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.39);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.39);
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.39);
+}
+.number-mission{
+    font-size: 1.875em;
+    font-weight: 600;
+    width: 20%;
+    height: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    border-right: solid 1px;
+    margin-right: 10px;
+}
+.name-mission-all{
+    flex-direction: column;
+    font-size: 1em;
+    width: 100%;
+    height: 100%;
+    padding-top: 5px;
+    
+}
+.name-miss{
+    width: 100%;
+    padding-bottom: 10px;
+}
+.chart-mission{
+    width: 100%;
+    height: 7px;
+    background-color: #DBDBDB;
+}
+.km-mission{
+    display: inline-flex;
+    position: relative;
+    font-size: 0.875em;
+    width: 30%;
+    height: 100%;
+  justify-content: center;
+  align-items: flex-end;
+   
+}
+.km-mission div{
+   
+    height: 100%;
+}
+.km{
+
+}
