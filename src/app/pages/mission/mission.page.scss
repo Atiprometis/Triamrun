@@ -13,8 +13,19 @@
     // display: block;
 
 }
-.test{
-    width: 200px;
-    height: 200px;
-    background-color: black;
+.head-mission{
+    height: 85px;
+    width: 100%;
+    background-color: #F3961F;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    
+}
+.mission{
+    font-size: 1.250em;
+    text-align: center;
+    color: #fff;
+}
+.no-scroll {
+    // --overflow: hidden;
 }
