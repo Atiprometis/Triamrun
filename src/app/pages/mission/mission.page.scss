@@ -18,14 +18,54 @@
     width: 100%;
     background-color: #F3961F;
     padding-top: 15px;
-    padding-bottom: 5px;
-    
+ 
+    display: flex;
+    flex-direction: column;
 }
 .mission{
     font-size: 1.250em;
     text-align: center;
     color: #fff;
+    height: 50%;
 }
-.no-scroll {
-    // --overflow: hidden;
+.wrapper-level{
+    height: 50%;
+    width: 100%;
+    background-color: red;
+    
+    
+}
+.level{
+   
+    display: flex;
+    flex-direction: row;
+    
+    font-size: 1em;
+    font-family: 'Prompt';
+    color: #fff;
+    
+    width: 100%;
+    height: 50%;
+    
+    text-align: center;
+    
+}
+.level div{
+    padding-top: 8px;
+    width: 100%;
+    height: 100% ;
+}
+.wrapper-mission-month{
+    display: flex;
+   height: 55px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -10px;
+
+}
+.wrapper-mission-month h2{
+    font-family: 'Prompt';
+    font-weight: 400;
+    font-size: 1.2em;
+    
 }

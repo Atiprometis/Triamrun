@@ -1,9 +1,50 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>run</ion-title>
+    <ion-buttons slot="start" >
+      <ion-button>
+        <ion-icon name="menu" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+   
+    <ion-title style="text-align: center; font-size: 1em; font-family: 'Prompt'; color: #FC6602;">RUN</ion-title>
+    <ion-buttons slot="end" >
+      <ion-button>
+        <ion-icon name="" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
+  <div class="contenner-run">
+    <div class="map"></div>
+    <div class="wrapper-run-recore">
+      <div class="number-km-all">
+        <div class="number-km">0.00</div>
+        <div class="distance-km">ระยะทาง(กม.)</div>
+      </div>
+      <div class="time-pace-calorie">
+        <div class="time-all">
+          <div class="time">0:00</div>
+          <div class="text-time">เวลา</div>
+        </div>
+        <div class="pace-all">
+          <div class="pace">-</div>
+          <div class="text-pace">PACE</div>
+        </div>
+        <div class="calorie-all">
+          <div class="calorie">0</div>
+          <div class="text-calorie">แคลอรี่</div>
+        </div>
+      </div>
+      <div class="wrapper-button-run">
+        <div class="button-run">
+          <ion-icon name="play"  color="light"  class="icon-play"></ion-icon>
+        </div>
+      </div>
+    </div>
+    
+  </div>
 
 </ion-content>
