@@ -20,9 +20,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/run/run.module').then( m => m.RunPageModule)
   },
   {
-    path: 'more',
-    loadChildren: () => import('./pages/more/more.module').then( m => m.MorePageModule)
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
+  },  {
+    path: 'inbox',
+    loadChildren: () => import('./pages/inbox/inbox.module').then( m => m.InboxPageModule)
   },
+
+
   
 ];
 
