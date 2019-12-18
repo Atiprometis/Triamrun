@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { HistoryPageRoutingModule } from './history-routing.module';
 
 import { HistoryPage } from './history.page';
-
+import { MenuopenComponent } from '../../components/menuopen/menuopen.component'
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +15,6 @@ import { HistoryPage } from './history.page';
     IonicModule,
     HistoryPageRoutingModule
   ],
-  declarations: [HistoryPage]
+  declarations: [HistoryPage,MenuopenComponent]
 })
 export class HistoryPageModule {}
