@@ -1,12 +1,8 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start" >
-      <ion-button>
-        <ion-icon name="menu" size="large"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+      <ion-menu-button slot="start" menu="openmenu1" size="large"></ion-menu-button>
     
-    <ion-title style="text-align: center; font-size: 1em; font-family: 'Prompt';color: #FC6602;">MISSION</ion-title>
+    <ion-title style="text-align: center; font-size: 1em; font-family: 'Prompt'; color: #FC6602;">MISSION</ion-title>
     <ion-buttons slot="end" >
       <ion-button>
         <ion-icon name="" ></ion-icon>
@@ -20,11 +16,23 @@
   <div class="head-mission">
     <div class="mission">Mission</div>
     
-      <div class="level">
-        <div style="border-bottom: solid 3px #000000;">ง่าย</div>
+    <ion-segment (ionChange)="segmentChanged($event)" class="level">
+        <ion-segment-button href="#dogs" value="eazy">
+          <ion-label>ง่าย</ion-label>
+        </ion-segment-button>
+        <ion-segment-button href="#cats" value="nomal">
+          <ion-label>กลาง</ion-label>
+        </ion-segment-button>
+        <ion-segment-button href="#cats" value="hard">
+            <ion-label>ยาก</ion-label>
+          </ion-segment-button>
+      </ion-segment>
+
+      <!-- <div class="level">
+        <div style="border-bottom: solid 3px #FC6602;">ง่าย</div>
         <div style="opacity: 0.5;">ปานกลาง</div>
         <div style="opacity: 0.5;">ยาก</div>
-      </div>
+      </div> -->
     
   </div>
   <div class="wrapper-mission-month">
@@ -32,20 +40,10 @@
   </div>
   <app-mission-button></app-mission-button>
   <app-mission-button></app-mission-button>
-  <app-mission-button></app-mission-button>
-  <app-mission-button></app-mission-button>
-  <app-mission-button></app-mission-button>
-  <app-mission-button></app-mission-button>
-  <app-mission-button></app-mission-button>
-  <app-mission-button></app-mission-button>
-  <app-mission-button></app-mission-button>
-  <app-mission-button></app-mission-button>
-  <app-mission-button></app-mission-button>
-  <app-mission-button></app-mission-button>
-  <app-mission-button></app-mission-button>
-  <app-mission-button></app-mission-button>
+  
+  
   <div class="wrappe-button">
-    <ion-button  class="button-run">เริ่มวิ่ง</ion-button>
+    <ion-button  class="button-run" color="traimrun">เริ่มวิ่ง</ion-button>
   </div>
   
 </ion-content>

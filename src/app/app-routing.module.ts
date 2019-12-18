@@ -26,6 +26,10 @@ const routes: Routes = [
     path: 'inbox',
     loadChildren: () => import('./pages/inbox/inbox.module').then( m => m.InboxPageModule)
   },
+  {
+    path: 'challenge',
+    loadChildren: () => import('./pages/challenge/challenge.module').then( m => m.ChallengePageModule)
+  },
 
 
   

@@ -1,4 +1,35 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="openmenu1" class="my-custom-menu">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>MENU</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+            <ion-item routerLink="/challenge">
+              <ion-icon name="person" slot="start"></ion-icon>
+              <ion-label>แก้ไขโปรไฟล์</ion-label>
+            </ion-item> 
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+        <ion-item routerLink="/challenge">
+            <ion-icon name="ribbon" slot="start"></ion-icon>
+            <ion-label>Challenge</ion-label>
+        </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+        <ion-item (click)="onLogout()">
+            <ion-icon name="log-out" slot="start"></ion-icon>
+            <ion-label>ออกจากระบบ</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet main></ion-router-outlet>
 <app-tabs></app-tabs>
 </ion-app>
