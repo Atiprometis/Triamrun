@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { ChallengePageRoutingModule } from './challenge-routing.module';
 
 import { ChallengePage } from './challenge.page';
+import { TabsMenuComponent } from '../../components/tabs-menu/tabs-menu.component'
+
 
 @NgModule({
   imports: [
@@ -15,6 +17,6 @@ import { ChallengePage } from './challenge.page';
     IonicModule,
     ChallengePageRoutingModule
   ],
-  declarations: [ChallengePage]
+  declarations: [ChallengePage,TabsMenuComponent]
 })
 export class ChallengePageModule {}
