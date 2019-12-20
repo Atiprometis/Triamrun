@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+
+import * as data from '../../../assets/data/data.json';
 @Component({
   selector: 'app-mission-button',
   templateUrl: './mission-button.component.html',
@@ -9,6 +11,8 @@ export class MissionButtonComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(data);
+  }
 
 }

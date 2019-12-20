@@ -22,7 +22,8 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
-  },  {
+  },
+  {
     path: 'inbox',
     loadChildren: () => import('./pages/inbox/inbox.module').then( m => m.InboxPageModule)
   },
@@ -30,6 +31,15 @@ const routes: Routes = [
     path: 'challenge',
     loadChildren: () => import('./pages/challenge/challenge.module').then( m => m.ChallengePageModule)
   },
+  {
+    path: 'create-challenge',
+    loadChildren: () => import('./pages/create-challenge/create-challenge.module').then( m => m.CreateChallengePageModule)
+  },
+  {
+    path: 'challenge-project',
+    loadChildren: () => import('./pages/challenge-project/challenge-project.module').then( m => m.ChallengeProjectPageModule)
+  },
+
 
 
   

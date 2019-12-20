@@ -1,3 +1,6 @@
+.contener-challenge{
+    font-family: 'Prompt';
+}
 .create-challenge-button{
     height: 86px;
     width: 100%;
@@ -5,5 +8,11 @@
     border-radius: 5px;
     font-family: 'Prompt';
     font-size: 1.250em;
+    font-weight: 400;
+}
+.text-challenge{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 0.875em;
     font-weight: 400;
 }

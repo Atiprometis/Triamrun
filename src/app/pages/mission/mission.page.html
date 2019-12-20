@@ -5,7 +5,7 @@
     <ion-title style="text-align: center; font-size: 1em; font-family: 'Prompt'; color: #FC6602;">MISSION</ion-title>
     <ion-buttons slot="end" >
       <ion-button>
-        <ion-icon name="" ></ion-icon>
+        <ion-icon name="search" ></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -16,14 +16,16 @@
   <div class="head-mission">
     <div class="mission">Mission</div>
     
-    <ion-segment (ionChange)="segmentChanged($event)" class="level">
-        <ion-segment-button href="#dogs" value="eazy">
-          <ion-label>ง่าย</ion-label>
+    <ion-segment (ionChange)="onFilterUpdate($event)" style="font-size: 1em;
+    font-family: 'Prompt';">
+        <ion-segment-button  value="eazy" checked>
+          <ion-label checked>ง่าย</ion-label>
+          
         </ion-segment-button>
-        <ion-segment-button href="#cats" value="nomal">
+        <ion-segment-button  value="nomal">
           <ion-label>กลาง</ion-label>
         </ion-segment-button>
-        <ion-segment-button href="#cats" value="hard">
+        <ion-segment-button  value="hard">
             <ion-label>ยาก</ion-label>
         </ion-segment-button>
       </ion-segment>
@@ -38,12 +40,13 @@
   <div class="wrapper-mission-month">
     <h2>พฤษจิกายน 2562</h2>
   </div>
+  
   <app-mission-button></app-mission-button>
-  <app-mission-button></app-mission-button>
+
   
   
   <div class="wrappe-button">
-    <ion-button  class="button-run" color="traimrun">เริ่มวิ่ง</ion-button>
+    <ion-button  class="button-run" color="traimrun" routerLink="/run">เริ่มวิ่ง</ion-button>
   </div>
   
 </ion-content>

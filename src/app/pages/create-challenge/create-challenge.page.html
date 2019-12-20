@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start" menu="openmenu1" size="large"></ion-menu-button>
+    <ion-title style="text-align: center; font-size: 1em; font-family: 'Prompt'; color: #FC6602;">CHALLENGE</ion-title>
+    <ion-buttons slot="end" >
+      <ion-button>
+        <ion-icon name="search" ></ion-icon>
+      </ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="contener-create-challenge">
+    <form>
+    <div class="wraper-create-challenge">
+     
+        <ion-list>
+          <ion-list-header>เป้าหมาย</ion-list-header>
+        
+          <ion-item>
+            
+            <ion-select placeholder="เลือกเป้าหมาย">
+              <ion-select-option >ระยะทางวิ่งมากที่สุด</ion-select-option>
+              <ion-select-option >กำหนดระยะทางเวลาดีที่สุด</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-list-header>เลือกระยะทางวิ่ง</ion-list-header>
+          
+          <ion-input placeholder="ระยะทางวิ่งมากที่สุด"></ion-input>
+  
+        
+          <div class="flew-row">
+            <ion-item>
+              <ion-label>วันที่เริ่ม</ion-label>
+              <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+              
+            </ion-item>
+            <ion-item>
+              <ion-label>วันที่สิ้นสุด</ion-label>
+              <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+              
+            </ion-item>
+          </div>
+          <div class="flew-row">
+            <ion-item>
+              <ion-label>เวลาที่เริ่ม</ion-label>
+              <ion-datetime displayFormat="HH:mm" [(ngModel)]="myTime"></ion-datetime>
+              
+            </ion-item>
+            <ion-item>
+              <ion-label>เวลาที่สิ้นสุด</ion-label>
+              <ion-datetime displayFormat="HH:mm" [(ngModel)]="myTime"></ion-datetime>
+              
+            </ion-item>
+          </div>
+          <ion-list-header>ใครสามารถเข้าร่วมได้บ้าง</ion-list-header>
+        
+          <ion-item>
+            
+            <ion-select placeholder="เลือกคนเข้าร่วม">
+              <ion-select-option  >เพื่อนเท่านั่น</ion-select-option>
+              <ion-select-option >ทุกคน</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      
+      
+    </div>
+    <div class="wraper-button">
+      <ion-button class="button-challenge" color="tarimrun" style="background-color: #ffffff; color: #000;" routerLink="/challenge">ยกเลิก</ion-button>
+      <ion-button class="button-challenge" color="tarimrun" style="background-color: #FC6602;" routerLink="/challenge-project">ยืนยัน</ion-button>
+
+    </div>
+  </form>
+  </div>
+</ion-content>
