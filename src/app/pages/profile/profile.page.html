@@ -11,7 +11,30 @@
 </ion-header>
 
 <ion-content>
-  <form>
-    
-  </form>
+  <div class="connener-profile">
+    <div class="profile-all">
+      <div class="img">
+        <div class="img-person"></div>
+      </div>
+      <div class="profile-name">
+        <div class="name">HARRY JO</div>
+        <div class="edit">แก้ไข้ข้อมูลส่วนตัว</div>
+      </div>
+    </div>
+    <div class="friend-all">
+      <div class="friend">
+        <!-- <ion-icon name="ribbon" ></ion-icon> -->
+        <div class="number-friend">1</div>
+      </div>
+      <div class="find-friend">
+        <div class="button-friend"></div>
+        <ion-button  fill="outline"  >หาเพื่อน</ion-button>
+      </div>
+    </div>
+    <ion-segment (ionChange)="onFilterUpdate($event)">
+      <ion-segment-button value="challenge" checked>MISSION</ion-segment-button>
+      <ion-segment-button value="history-challenge">CHALLENGE</ion-segment-button>
+    </ion-segment>
+  </div>
+  
 </ion-content>

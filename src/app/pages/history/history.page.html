@@ -52,10 +52,16 @@
           
       </div>
       <div class="connenter">
+ 
           <div class="wrappe-button-history">
-              <div class="text-history hightlight">7วัน</div>
+            <ion-segment (ionChange)="onFilterUpdate($event)" style="font-family: 'Prompt';">
+              <ion-segment-button value="day" checked class="text-history ">7 วัน</ion-segment-button>
+              <ion-segment-button value="mont" class="text-history ">1 เดือน</ion-segment-button>
+              <ion-segment-button value="year" class="text-history ">1  ปี</ion-segment-button>
+            </ion-segment>
+              <!-- <div class="text-history hightlight">7วัน</div>
               <div class="text-history">1 เดือน</div>
-              <div class="text-history">1 ปี</div>    
+              <div class="text-history">1 ปี</div>     -->
           </div>
       </div>
   </div>
