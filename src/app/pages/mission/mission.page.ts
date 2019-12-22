@@ -3,7 +3,7 @@ import { SegmentChangeEventDetail } from '@ionic/core';
 
 import {MissionButtonComponent } from '../../components/mission-button/mission-button.component'
 
-import * as data from '../../../assets/data/data.json';
+
 @Component({
   selector: 'app-mission',
   templateUrl: './mission.page.html',
@@ -15,7 +15,7 @@ export class MissionPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(data);
+
   }
   
   onFilterUpdate(event: CustomEvent<SegmentChangeEventDetail>){
