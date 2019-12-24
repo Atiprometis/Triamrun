@@ -22,7 +22,7 @@
       </div>
       <div class="time-pace-calorie">
         <div class="time-all">
-          <div class="time">0:00</div>
+          <div class="time">{{hours}}:{{min}}:{{second}}</div>
           <div class="text-time">เวลา</div>
         </div>
         <div class="pace-all">
@@ -36,8 +36,16 @@
       </div>
       <div class="wrapper-button-run">
  
-        <ion-button class="button-run" color="triamrun">
+        <ion-button class="button-run" color="triamrun" (click)="onRunrecord()" >
           <ion-icon name="play"  color="light"  class="icon-play"></ion-icon>
+        </ion-button>
+
+        <ion-button class="button-run" color="triamrun" (click)="onTimepause()">
+          <ion-icon name="pause"  color="light"  class="icon-play"></ion-icon>
+        </ion-button>
+
+        <ion-button class="button-run" color="triamrun" (click)="onTimeend()">
+          <ion-icon name="square"  color="light"  class="icon-play"></ion-icon>
         </ion-button>
       </div>
     </div>

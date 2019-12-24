@@ -1,15 +1,49 @@
 import { Component, OnInit } from '@angular/core';
 
+import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-run',
   templateUrl: './run.page.html',
   styleUrls: ['./run.page.scss'],
 })
 export class RunPage implements OnInit {
+  public second = 0;
+  public min = 0;
+  public hours = 0;
+   intervalVar: any;
 
-  constructor() { }
+
+  constructor(public http: HttpClient) {
+
+   }
 
   ngOnInit() {
   }
 
+  
+  onRunrecord(){
+     this.intervalVar = setInterval(function(){
+      // alert(this.timer++);
+      this.second++;
+
+
+      if(this.second >= 60){
+        this.min++;
+        this.second = 0;
+      }else if(this.min >= 60){
+        this.hours++;
+        this.min = 0;
+      }
+    }.bind(this),1000)
+
+    // let url = "http://localhost/triamrun/runrecord.php";
+    // let dataPost = new FormData();
+    // dataPost.append('second',this.second);
+  }
+
+  onTimepause(){
+
+    clearInterval(this.intervalVar);
+  }
 }
