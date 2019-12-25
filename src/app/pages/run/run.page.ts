@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-run',
   templateUrl: './run.page.html',
@@ -36,6 +37,9 @@ export class RunPage implements OnInit {
         this.min = 0;
       }
     }.bind(this),1000)
+    let data = [this.second,this.min,this.hours];
+    console.log(data);
+    this.http.post("http://localhost/triamrun/runrecord.php",data);
 
     // let url = "http://localhost/triamrun/runrecord.php";
     // let dataPost = new FormData();
@@ -43,7 +47,9 @@ export class RunPage implements OnInit {
   }
 
   onTimepause(){
-
+    console.log("second : ",this.second);
+    console.log("min : ",this.min);
+    console.log("hours : ",this.hours);
     clearInterval(this.intervalVar);
   }
 }
