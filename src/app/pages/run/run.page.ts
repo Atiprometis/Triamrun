@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { HttpClient } from '@angular/common/http';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+// import { map } from 'rxjs/operator';
 
 @Component({
   selector: 'app-run',
@@ -37,9 +36,23 @@ export class RunPage implements OnInit {
         this.min = 0;
       }
     }.bind(this),1000)
-    let data = [this.second,this.min,this.hours];
-    console.log(data);
+
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+   });
+
+    let data:any = {
+      'second': this.second,
+      'min': this.min,
+      'hours': this.hours,
+    };
+
+    // console.log(data);
+
+    
+
     this.http.post("http://localhost/triamrun/runrecord.php",data);
+    
 
     // let url = "http://localhost/triamrun/runrecord.php";
     // let dataPost = new FormData();
