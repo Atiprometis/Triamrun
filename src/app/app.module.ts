@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { TabsPage } from './pages/tabs/tabs/tabs.page';
 
 
+
 @NgModule({
   declarations: [AppComponent,TabsPage],
   entryComponents: [],
