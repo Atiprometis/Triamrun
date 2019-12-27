@@ -73,14 +73,6 @@ export class RunPage implements OnInit {
         this.min = 0;
       }
     }.bind(this), 1000);
-
-    // console.log(data);
-    // console.time("StartRecord")
-    // this.submitDataFunction();
-    // console.timeEnd("StartRecord")
-
-    
-
    
     // let  data:Observable<any> =  this.http.post("http://localhost/triamrun/insert_db.php", dataPost);
    
@@ -99,7 +91,7 @@ export class RunPage implements OnInit {
       'second': this.second,
      });
 
-     let data:Observable<any> = this.http.post(usrl,dataPost)
+     let data:Observable<any> = this.runService.postDataURL(usrl,dataPost)
      data.map(res => res.json())
      data.subscribe(data =>{
       console.log('postDataURL ss',data);
@@ -119,6 +111,51 @@ export class RunPage implements OnInit {
     console.log("second : ", this.second);
     console.log("min : ", this.min);
     console.log("hours : ", this.hours);
+
+    let usrl:string = "http://localhost/triamrun/insert_db.php";
+     let dataPost = JSON.stringify({
+      'hours': this.hours,
+      'min': this.min,
+      'second': this.second,
+     });
+
+     let data:Observable<any> = this.runService.postDataURL(usrl,dataPost)
+     data.map(res => res.json())
+     data.subscribe(data =>{
+      console.log('postDataURL ss',data);
+     });
+
     clearInterval(this.intervalVar);
   }
+  onRunworking(){
+    this.intervalVar = setInterval(function () {
+      // alert(this.timer++);
+      this.second++;
+      if (this.second >= 60) {
+        this.min++;
+        this.second = 0;
+      } else if (this.min >= 60) {
+        this.hours++;
+        this.min = 0;
+      }
+    }.bind(this), 1000);
+  }
+
+  onTimeend(){
+    let usrl:string = "http://localhost/triamrun/insert_db.php";
+     let dataPost = JSON.stringify({
+      'hours': this.hours,
+      'min': this.min,
+      'second': this.second,
+     });
+
+     let data:Observable<any> = this.runService.postDataURL(usrl,dataPost)
+     data.map(res => res.json())
+     data.subscribe(data =>{
+      console.log('postDataURL ss',data);
+     });
+
+    clearInterval(this.intervalVar);
+  }
+
 }
