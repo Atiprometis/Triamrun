@@ -8,8 +8,8 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { HttpClientModule } from '@angular/common/http';
-// import { HttpModule } from '@angular/http';
-// import { HttpModule } from '@angular/http';
+import { HttpModule } from '@angular/http';
+
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +23,7 @@ import { TabsPage } from './pages/tabs/tabs/tabs.page';
   imports: [BrowserModule, 
     IonicModule.forRoot(),
     HttpClientModule, 
-
+    HttpModule,
     AppRoutingModule],
 
   providers: [
