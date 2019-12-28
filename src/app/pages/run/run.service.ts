@@ -47,6 +47,7 @@ serve: string="http://localhost/triamrun/insert_db.php";
     return this.http.post(url, jsonBody);
   }
 
+  
 
 //   postData(body, file){
     

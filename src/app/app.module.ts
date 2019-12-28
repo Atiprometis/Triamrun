@@ -28,9 +28,10 @@ import { TabsPage } from './pages/tabs/tabs/tabs.page';
     AppRoutingModule],
 
   providers: [
+    Geolocation,
     StatusBar,
     SplashScreen,
-    Geolocation,
+
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
    
   ],

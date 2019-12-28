@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'mission', pathMatch: 'full' },
+  { path: '', redirectTo: 'geolocaion', pathMatch: 'full' },
   {
     path: 'mission',
     loadChildren: () => import('./pages/mission/mission.module').then( m => m.MissionPageModule)
@@ -39,6 +39,11 @@ const routes: Routes = [
     path: 'challenge-project',
     loadChildren: () => import('./pages/challenge-project/challenge-project.module').then( m => m.ChallengeProjectPageModule)
   },
+  {
+    path: 'geolocaion',
+    loadChildren: () => import('./pages/geolocaion/geolocaion.module').then( m => m.GeolocaionPageModule)
+  },
+
 
 
 

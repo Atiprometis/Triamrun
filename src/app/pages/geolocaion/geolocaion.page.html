@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>geolocaion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="getLoc()" expand="block">Get Location</ion-button>
+  <ion-button (click)="calculateDistance()" expand="block">Get distance</ion-button>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Location Info</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>
+        Latitue
+      </ion-label>
+      <ion-badge slot="end">{{lat1}}</ion-badge>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        longitude
+      </ion-label>
+      <ion-badge slot="end">{{lng1}}</ion-badge>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        distance
+      </ion-label>
+      <ion-badge slot="end">{{dis}}</ion-badge>
+    </ion-item>
+    </ion-list>
+    
+</ion-content>
