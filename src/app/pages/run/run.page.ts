@@ -59,20 +59,7 @@ export class RunPage implements OnInit {
 
   ngOnInit() {
   }
-  onLocation(position){
- 
-    alert('Latitude: '          + position.coords.latitude          + '\n' +
-    'Longitude: '         + position.coords.longitude         + '\n' +
-    'Altitude: '          + position.coords.altitude          + '\n' +
-    'Accuracy: '          + position.coords.accuracy          + '\n' +
-    'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-    'Heading: '           + position.coords.heading           + '\n' +
-    'Speed: '             + position.coords.speed             + '\n' +
-    'Timestamp: '         + position.timestamp                + '\n');
-
-
-
-  }
+  
   getDataFunction() {
     let tmp_resp = [
       {
@@ -119,17 +106,7 @@ export class RunPage implements OnInit {
         this.min = 0;
       }
     }.bind(this), 1000);
-   
-    // let  data:Observable<any> =  this.http.post("http://localhost/triamrun/insert_db.php", dataPost);
-   
-    // data.subscribe((resp) => {
-    //   if(resp.status == 200){
-    //     alert(resp.msg);
-    //   }else{
-    //     alert(resp.msg);
-    //   }
-    // console.log('postDataURL resp :',resp);
-    // });
+ 
     let usrl:string = "http://localhost/triamrun/insert_db.php";
      let dataPost = JSON.stringify({
       'hours': this.hours,

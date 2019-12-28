@@ -19,7 +19,10 @@ export class GeolocaionPage implements OnInit {
   lng1:any;
   lat2:any =14.615755;
   lng2:any =100.893776;
-  dis:any;
+  lat3:any;
+  lng3:any;
+
+  distance:any;
   intervalVar: any;
   constructor(
     private geolocation: Geolocation,
@@ -37,6 +40,8 @@ export class GeolocaionPage implements OnInit {
   //     this.getLoc();
   //   });
   // }
+
+  
   getLoc(){
     this.intervalVar = setInterval(function () {
       this.geolocation.getCurrentPosition(
@@ -50,9 +55,15 @@ export class GeolocaionPage implements OnInit {
               // console.log(JSON.stringify( resp.coords));
               console.log(resp);
               // alert(JSON.stringify( resp.coords));
+            let a:any;
+            
+            let b:any;
+            let c:any;
 
-              this.lat1=resp.coords.latitude
-              this.lng1=resp.coords.longitude
+            this.lat1 = resp.coords.latitude
+            this.lng1 = resp.coords.longitude
+
+
               },er=>{
                 //alert("error getting location")
                 alert('Can not retrieve Location')
@@ -61,29 +72,30 @@ export class GeolocaionPage implements OnInit {
               alert('Error getting location - '+JSON.stringify(error))
               });
     }.bind(this), 5000);
-
-    
-             
+     
   }
 
-  calculateDistance(){
-    let lati1:any =14.548888;
-    let  lngi1:any =100.907579;
-    let lati2:any =14.5651728;
-    let  lngi2:any =100.8835939;
-    let  dis:any ;
+
+  calculateDistance(lati1:number,lngi1:number,lat2:number,lng2:number){
+    // let lati1:any =14.548888;
+    // let  lngi1:any =100.907579;
+      // let lati2:any =14.5651728;
+  // let  lngi2:any =100.8835939;
+
 
       let p = 0.017453292519943295;    // Math.PI / 180
       let c = Math.cos;
-      let a = 0.5 - c((lati1-lati2) * p) / 2 + c(lati2 * p) *c((lati1) * p) * (1 - c(((lngi1- lngi2) * p))) / 2;
-      dis = (12742 * Math.asin(Math.sqrt(a))); // 2 * R; R = 6371 km
-      console.log(lati1);
-      console.log(lati2);
-      console.log(lngi1);
-      console.log(lngi2);
-      console.log(dis);
+let a = 0.5 - c((this.lat1-this.lat2) * p) / 2 + c(this.lat2 * p) *c((this.lat1) * p) * (1 - c(((this.lng1- this.lng2) * p))) / 2;
+      this.distance = (12742 * Math.asin(Math.sqrt(a))); // 2 * R; R = 6371 km
 
-      return dis;
+      console.log('lat1',this.lat1);
+      console.log('lng1',this.lng1);
+
+      console.log('lat2',this.lat2);
+      console.log('lng2',this.lng2);
+      console.log('distance',this.distance);
+
+      return this.distance;
     
   }
   
