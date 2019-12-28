@@ -1,11 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
+
 import { Http } from '@angular/http';
 import { RunService } from './run.service';
 import { Observable } from 'rxjs';
 import { callCordovaPlugin } from '@ionic-native/core/decorators/common';
-import { url } from 'inspector';
+
 // import { map } from 'rxjs/operator';
+import { Platform } from '@ionic/angular';
+import { Geolocation} from '@ionic-native/geolocation/ngx';
+
+import { Plugins } from '@capacitor/core';
+
+declare var google;
 
 @Component({
   selector: 'app-run',
@@ -17,16 +23,56 @@ export class RunPage implements OnInit {
   public min = 0;
   public hours = 0;
   intervalVar: any;
-
+  map:any;    
+  marker:any;
+  latitude:any="";
+  longtitude:any="";
+  timestamp:any="";
 
   constructor( 
     public http:Http,
     public runService: RunService,
-  ) { }
+    public platform:Platform,
+    public geolocation:Geolocation,
+  ) {
+
+   
+
+    // this.platform.ready().then(() => {
+    //   var mapOptions={
+    //     center:{lat:23.23366,lng:79.3822},
+    //     zoom:7
+    //   }
+    //   this.map = new google.maps.Map(document.getElementById("map"),mapOptions);
+    // })
+
+    // Geolocation(){
+    //   var ref = this;
+    //   let watch this.geolocation.watchPosition();
+    //   watch.subscribe((possition)=>{
+    //     var gps = new google.maps.Latlg
+    //     (possition.coordsla.latitude,possition.coordsla.longtitude)
+    //   })
+    // }
+
+   }
 
   ngOnInit() {
   }
+  onLocation(position){
+ 
+    alert('Latitude: '          + position.coords.latitude          + '\n' +
+    'Longitude: '         + position.coords.longitude         + '\n' +
+    'Altitude: '          + position.coords.altitude          + '\n' +
+    'Accuracy: '          + position.coords.accuracy          + '\n' +
+    'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+    'Heading: '           + position.coords.heading           + '\n' +
+    'Speed: '             + position.coords.speed             + '\n' +
+    'Timestamp: '         + position.timestamp                + '\n');
 
+
+
+  }
   getDataFunction() {
     let tmp_resp = [
       {
@@ -158,4 +204,9 @@ export class RunPage implements OnInit {
     clearInterval(this.intervalVar);
   }
 
+
+
+  Geolocation(){
+
+  }
 }

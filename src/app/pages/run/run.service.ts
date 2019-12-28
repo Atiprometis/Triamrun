@@ -39,9 +39,9 @@ serve: string="http://localhost/triamrun/insert_db.php";
   public getData() {
     return this.http.get("http://localhost:8080/somedata.json");
   }
-  // public postData(jsonBody: any) {
-  //   return this.http.post("http://localhost:8080/somedata", jsonBody);
-  // }
+  public postData(jsonBody: any) {
+    return this.http.post("http://localhost:8080/somedata", jsonBody);
+  }
 
   public postDataURL(url:string,jsonBody: any) {
     return this.http.post(url, jsonBody);

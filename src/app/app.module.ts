@@ -9,7 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-
+import { Geolocation} from '@ionic-native/geolocation/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,12 +24,15 @@ import { TabsPage } from './pages/tabs/tabs/tabs.page';
     IonicModule.forRoot(),
     HttpClientModule, 
     HttpModule,
+  
     AppRoutingModule],
 
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+   
   ],
   bootstrap: [AppComponent]
 })

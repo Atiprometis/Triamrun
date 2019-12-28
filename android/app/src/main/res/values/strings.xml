@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Triamrun</string>
+    <string name="title_activity_main">Triamrun</string>
+    <string name="package_name">th.in.triamrun.ionic.captest</string>
+    <string name="custom_url_scheme">th.in.triamrun.ionic.captest</string>
+</resources>
