@@ -6,6 +6,8 @@ import { RunService } from '../run/run.service';
 
 import { ModalController} from '@ionic/angular';
 import { Observable } from 'rxjs';
+
+
 @Component({
   selector: 'app-geolocaion',
   templateUrl: './geolocaion.page.html',
@@ -84,8 +86,6 @@ export class GeolocaionPage implements OnInit {
       return dis;
     
   }
-  onGetmaplocation(){
-    this.modalCtrl.create({component: MapModalComponent})
-  }
+  
 
 }

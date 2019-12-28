@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ModalController } from '@ionic/angular';
 @Component({
   selector: 'app-map-modal',
   templateUrl: './map-modal.component.html',
@@ -7,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private modalCtrl: ModalController,
+  ) { }
 
   ngOnInit() {}
+
+    onCencel(){
+      this.modalCtrl.dismiss();
+    }
 
 }
