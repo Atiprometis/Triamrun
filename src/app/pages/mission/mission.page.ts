@@ -3,7 +3,8 @@ import { SegmentChangeEventDetail } from '@ionic/core';
 
 import {MissionButtonComponent } from '../../components/mission-button/mission-button.component'
 
-
+import { MissionService } from '../../service/mission.service';
+import { Http } from '@angular/http';
 @Component({
   selector: 'app-mission',
   templateUrl: './mission.page.html',
@@ -12,7 +13,20 @@ import {MissionButtonComponent } from '../../components/mission-button/mission-b
 export class MissionPage implements OnInit {
   // missions: any =(data as any).default1;
 
-  constructor() { }
+  constructor(
+    public http:Http,
+    public missionService: MissionService,
+  ) { 
+
+    
+      this.missionService.getMissioninfo()
+      .subscribe(resp => {
+        console.log("resp data :", resp);
+        //TODO
+
+      });
+    
+  }
 
   ngOnInit() {
 

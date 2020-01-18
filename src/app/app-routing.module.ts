@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'geolocaion', pathMatch: 'full' },
+  { path: '', redirectTo: 'mission', pathMatch: 'full' },
   {
     path: 'mission',
     loadChildren: () => import('./pages/mission/mission.module').then( m => m.MissionPageModule)
