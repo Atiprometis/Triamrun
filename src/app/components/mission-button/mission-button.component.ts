@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MissionService } from '../../service/mission.service' 
 
 
 @Component({
@@ -9,10 +10,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MissionButtonComponent implements OnInit {
 
-  constructor() { }
+  missioninfo: any;
+  public mission_id = 0;
+ 
+  isLoading = false;
+
+  constructor(
+    private missionService:MissionService,
+
+  ) { 
+    
+  }
+
+  
 
   ngOnInit() {
+    this.missionService.showLoader();
+    this.missionService.getMissioninfo()
 
+    .subscribe(resp => {
+      
+      this.missioninfo = resp;
+
+      console.log("resp data mission conponent :", this.missioninfo);
+      this.missionService.hideLoader();
+    }),
+    error => {
+      console.log(error);
+
+    };
   }
 
 }

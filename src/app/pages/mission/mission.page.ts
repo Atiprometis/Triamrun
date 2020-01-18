@@ -19,12 +19,7 @@ export class MissionPage implements OnInit {
   ) { 
 
     
-      this.missionService.getMissioninfo()
-      .subscribe(resp => {
-        console.log("resp data :", resp);
-        //TODO
-
-      });
+   
     
   }
 
