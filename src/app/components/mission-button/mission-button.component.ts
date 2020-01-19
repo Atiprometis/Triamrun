@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MissionService } from '../../service/mission.service' 
-
+import { Observable } from 'rxjs';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-mission-button',
@@ -11,45 +12,62 @@ import { MissionService } from '../../service/mission.service'
 export class MissionButtonComponent implements OnInit {
 
   missioninfo: any;
+
   public mission_id = 0;
  
   isLoading = false;
-
+  
   onClasschangeClick = {};
   onClasschangeClick2 = {};
-  onClassfade ={}
+  onClassfade ={};
   clcikCount = 0;
   isShow:boolean = false;
+  itemObservable: any;
+
+  numberuser: any;
+
+  missionid: number;
+  missionname: string;
+  missiondistance: number;
+
+
 
   constructor(
     private missionService:MissionService,
 
   ) { 
+    this.numberuser = {
+      number: '1',
+      phone:[
+        '08955430',
+        '094304223',
+        '089998'
+      ]
+    }
     
   }
 
   
 
   ngOnInit() {
-    // this.missionService.showLoader();
+    this.missionService.showLoader();
+
     this.missionService.getMissioninfo()
-
+    // .map((res: any) => res.json());
     .subscribe(resp => {
-      
-      this.missioninfo = resp;
+      console.log(resp);
+      this.missioninfo = resp.json();
 
-      console.log("resp data mission conponent :", this.missioninfo);
+      // console.log("resp data mission conponent :", this.missioninfo);
       // this.missionService.hideLoader();
     }),
     error => {
+      this.missionService.hideLoader();
       console.log(error);
 
     };
   }
 
-  showdata(){
-    console.log('show data ',this.missioninfo);
-  }
 
   setClasschange(){
     if(this.clcikCount == 2){

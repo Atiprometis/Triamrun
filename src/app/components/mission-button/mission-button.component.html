@@ -1,18 +1,24 @@
 
+<!-- <h1>{{numberuser.number}}</h1>
+<h1 *ngFor="let phoneN of numberuser.phone">{{phoneN}}</h1>
 
-  <div class="wrapper-mission" (click)="setClasschange()" >
-    <div class="contaner-mission-botton" [ngClass]="onClasschangeClick">
-        <div class="flex-row">
-          <div class="number-mission" >
-            <div>1</div>
+<h1>{{missioninfo}}</h1>
+<h1 *ngFor="let phoneN of missioninfo">{{phoneN.missionname}}</h1>
+<h1 *ngFor="let phoneN of numberuser.phone">{{phoneN}}</h1> -->
+
+  <div class="wrapper-mission"  >
+    <div class="contaner-mission-botton"  [ngClass]="onClasschangeClick" *ngFor="let mission of missioninfo">
+        <div class="flex-row" (click)="setClasschange()" >
+          <div class="number-mission"  >
+            <div>{{mission.missionid}}</div>
           </div>
           <div class="name-mission-all">
-            <div class="name-miss">วิ่ง</div>
+            <div class="name-miss">{{mission.missionname}}</div>
             <div class="chart-mission"></div>
           </div>
           <div class="km-mission">
-            <div class="km">5</div>
-            <div class="km">กม.</div>
+            <div class="km">{{mission.missiondistance}}</div>
+            <div class="km">&nbsp;กม.</div>
           </div>
         </div>
 
@@ -23,7 +29,7 @@
           <div class="flex-row-time">
             <ion-item >
               <ion-icon name="timer" ></ion-icon>
-              <ion-label>00:00</ion-label>
+              <ion-label>{{mission.missiontime}}</ion-label>
             </ion-item> 
             <ion-item >
               <ion-icon name="time" ></ion-icon>
@@ -37,26 +43,45 @@
           </div>
         </div>
     </div>
-    
   </div>
 
-<!-- <button (click)="showdata()">show</button> -->
 
 
-<!-- <div class="wrapper-mission" >
 
-  <div class="contaner-mission-botton" >
-      <div class="number-mission">
-        <div>2</div>
+<!-- <div class="wrapper-mission" (click)="setClasschange()" >
+  <div class="contaner-mission-botton" [ngClass]="onClasschangeClick">
+      <div class="flex-row">
+        <div class="number-mission" >
+          <div>1</div>
+        </div>
+        <div class="name-mission-all">
+          <div class="name-miss">วิ่ง</div>
+          <div class="chart-mission"></div>
+        </div>
+        <div class="km-mission">
+          <div class="km">5</div>
+          <div class="km">กม.</div>
+        </div>
       </div>
-      <div class="name-mission-all">
-        <div class="name-miss">วิ่ง</div>
-        <div class="chart-mission"></div>
-      </div>
-      <div class="km-mission">
-        <div class="km">5</div>
-        <div class="km">กม.</div>
+
+
+
+      <div class="time-timeend-repeat fade" *ngIf="isShow"> 
+        <div class="flex-row-time">
+          <ion-item >
+            <ion-icon name="timer" ></ion-icon>
+            <ion-label>00:00</ion-label>
+          </ion-item> 
+          <ion-item >
+            <ion-icon name="time" ></ion-icon>
+            <ion-label>00:00</ion-label>
+          </ion-item> 
+          <ion-item >
+            <ion-icon name="repeat" ></ion-icon>
+
+          </ion-item> 
+
+        </div>
       </div>
   </div>
-
 </div> -->

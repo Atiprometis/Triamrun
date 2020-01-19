@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { LoadingController } from '@ionic/angular';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -63,13 +65,18 @@ export class MissionService {
     hideLoader() {
       setTimeout(() => {
         this.loadingController.dismiss();
-      }, 2000);
+      }, 1000);
     }
-
 
     getMissioninfo(){
       return this.http.get("http://localhost/triamrun/getmissioninfo.php");
 
       
     }
+
+    // getMissioninfo(){
+    //   return this.http.get("http://localhost/triamrun/getmissioninfo.php");
+
+      
+    // }
 }
