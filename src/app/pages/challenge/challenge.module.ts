@@ -7,8 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { ChallengePageRoutingModule } from './challenge-routing.module';
 
 import { ChallengePage } from './challenge.page';
-import { TabsMenuComponent } from '../../components/tabs-menu/tabs-menu.component'
-import { MyChallengeComponent } from '../../components/my-challenge/my-challenge.component'
+// import { TabsMenuComponent } from '../../components/tabs-menu/tabs-menu.component';
+// import { MyChallengeComponent } from '../../components/my-challenge/my-challenge.component';
 
 @NgModule({
   imports: [
@@ -17,6 +17,6 @@ import { MyChallengeComponent } from '../../components/my-challenge/my-challenge
     IonicModule,
     ChallengePageRoutingModule
   ],
-  declarations: [ChallengePage,TabsMenuComponent,MyChallengeComponent]
+  declarations: [ChallengePage]
 })
 export class ChallengePageModule {}

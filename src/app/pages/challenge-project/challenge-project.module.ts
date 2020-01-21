@@ -7,7 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { ChallengeProjectPageRoutingModule } from './challenge-project-routing.module';
 
 import { ChallengeProjectPage } from './challenge-project.page';
-import { TabsMenuComponent } from '../../components/tabs-menu/tabs-menu.component'
+// import { TabsMenuComponent } from '../../components/tabs-menu/tabs-menu.component'
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +16,6 @@ import { TabsMenuComponent } from '../../components/tabs-menu/tabs-menu.componen
     IonicModule,
     ChallengeProjectPageRoutingModule
   ],
-  declarations: [ChallengeProjectPage,TabsMenuComponent]
+  declarations: [ChallengeProjectPage]
 })
 export class ChallengeProjectPageModule {}

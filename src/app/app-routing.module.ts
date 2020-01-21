@@ -42,7 +42,11 @@ const routes: Routes = [
   {
     path: 'geolocaion',
     loadChildren: () => import('./pages/geolocaion/geolocaion.module').then( m => m.GeolocaionPageModule)
+  },  {
+    path: 'mission-history',
+    loadChildren: () => import('./pages/mission-history/mission-history.module').then( m => m.MissionHistoryPageModule)
   },
+
 
 
 

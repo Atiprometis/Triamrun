@@ -50,7 +50,7 @@ export class MissionButtonComponent implements OnInit {
   
 
   ngOnInit() {
-    this.missionService.showLoader();
+    // this.missionService.showLoader();
 
     this.missionService.getMissioninfo()
     // .map((res: any) => res.json());
@@ -62,7 +62,7 @@ export class MissionButtonComponent implements OnInit {
       // this.missionService.hideLoader();
     }),
     error => {
-      this.missionService.hideLoader();
+      // this.missionService.hideLoader();
       console.log(error);
 
     };
