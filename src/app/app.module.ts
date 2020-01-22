@@ -10,6 +10,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { Geolocation} from '@ionic-native/geolocation/ngx';
+import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,7 +25,7 @@ import { TabsPage } from './pages/tabs/tabs/tabs.page';
     IonicModule.forRoot(),
     HttpClientModule, 
     HttpModule,
-  
+    FormsModule,
     AppRoutingModule],
 
   providers: [
