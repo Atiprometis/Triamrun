@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { Geolocation} from '@ionic-native/geolocation/ngx';
 import {FormsModule} from '@angular/forms';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +27,10 @@ import { TabsPage } from './pages/tabs/tabs/tabs.page';
     HttpClientModule, 
     HttpModule,
     FormsModule,
+    IonicStorageModule.forRoot({
+      name: '__mydb',
+driverOrder: ['indexeddb', 'sqlite', 'websql']
+    }),
     AppRoutingModule],
 
   providers: [

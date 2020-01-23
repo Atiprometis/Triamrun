@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { MissionService } from '../../service/mission.service' 
 import { Observable } from 'rxjs';
@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
 })
 export class MissionButtonComponent implements OnInit {
 
-  missioninfo: any;
+  @Input() missioninfo: any[];
 
   public mission_id = 0;
  
@@ -50,22 +50,22 @@ export class MissionButtonComponent implements OnInit {
   
 
   ngOnInit() {
-    // this.missionService.showLoader();
+    // // this.missionService.showLoader();
 
-    this.missionService.getMissioninfo()
-    // .map((res: any) => res.json());
-    .subscribe(resp => {
-      console.log(resp);
-      this.missioninfo = resp.json();
+    // this.missionService.getMissioninfo()
+    // // .map((res: any) => res.json());
+    // .subscribe(resp => {
+    //   console.log(resp);
+    //   this.missioninfo = resp.json();
 
-      // console.log("resp data mission conponent :", this.missioninfo);
-      // this.missionService.hideLoader();
-    }),
-    error => {
-      // this.missionService.hideLoader();
-      console.log(error);
+    //   // console.log("resp data mission conponent :", this.missioninfo);
+    //   // this.missionService.hideLoader();
+    // }),
+    // error => {
+    //   // this.missionService.hideLoader();
+    //   console.log(error);
 
-    };
+    // };
   }
 
 

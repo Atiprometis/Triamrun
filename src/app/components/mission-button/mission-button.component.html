@@ -7,13 +7,14 @@
 <h1 *ngFor="let phoneN of numberuser.phone">{{phoneN}}</h1> -->
 
   <div class="wrapper-mission"  >
-    <div class="contaner-mission-botton"  [ngClass]="onClasschangeClick" *ngFor="let mission of missioninfo">
+    <div class="contaner-mission-botton"  [ngClass]="onClasschangeClick" 
+    *ngFor="let mission of missioninfo; index as i">
         <div class="flex-row" (click)="setClasschange()" >
           <div class="number-mission"  >
-            <div>{{mission.missionid}}</div>
+            <div>{{i+1}}</div>
           </div>
           <div class="name-mission-all">
-            <div class="name-miss">{{mission.missionname}}</div>
+            <div class="name-miss">{{mission.missio_level_name}}</div>
             <div class="chart-mission"></div>
           </div>
           <div class="km-mission">
