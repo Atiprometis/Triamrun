@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { LoadingController } from '@ionic/angular';
-import { userInfo } from 'os';
+// import { userInfo } from 'os';
 
 
 @Injectable({

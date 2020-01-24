@@ -62,9 +62,9 @@ export class MissionPage implements OnInit {
         // .map((res: any) => res.json());
         .subscribe(resp => {
           console.log(resp);
-    
+          
           this.missioninfo = resp.json();
-    
+          this.storage.set('missioninfo',this.missioninfo);
           // console.log("resp data mission conponent :", this.missioninfo);
           // this.missionService.hideLoader();
         }),
@@ -121,7 +121,12 @@ export class MissionPage implements OnInit {
       });
     })
 
+  }
 
+  getMissioninfo(){
+    this.result = this.storage.get('missioninfo').then(missioninfoval => {   
+      console.log('missioninfoval',missioninfoval);
+    });
   }
   onFilterUpdate(event: CustomEvent<SegmentChangeEventDetail>){
     console.log(event.detail);

@@ -18,7 +18,7 @@
             <div class="chart-mission"></div>
           </div>
           <div class="km-mission">
-            <div class="km">{{mission.missiondistance}}</div>
+            <div class="km">{{mission.level_dictance}}</div>
             <div class="km">&nbsp;กม.</div>
           </div>
         </div>
@@ -28,7 +28,7 @@
         </div> -->
         <div class="time-timeend-repeat fade" *ngIf="isShow"> 
           <div class="flex-row-time">
-            <ion-item  >
+            <ion-item  (click)="missionHistory()">
               <ion-icon name="timer" ></ion-icon>
               <ion-label>{{mission.missiontime}}</ion-label>
             </ion-item> 

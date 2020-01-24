@@ -3,7 +3,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MissionService } from '../../service/mission.service' 
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
+import { Router} from '@angular/router';
 
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-mission-button',
   templateUrl: './mission-button.component.html',
@@ -29,12 +31,13 @@ export class MissionButtonComponent implements OnInit {
   missionid: number;
   missionname: string;
   missiondistance: number;
-
+  
 
 
   constructor(
     private missionService:MissionService,
-
+    private router:Router,
+    private navCtrl: NavController
   ) { 
     this.numberuser = {
       number: '1',
@@ -67,8 +70,12 @@ export class MissionButtonComponent implements OnInit {
 
     // };
   }
-
-
+  missionHistory(){
+    // this.navCtrl.navigateForward('mission-history/1234');
+    this.navCtrl.navigateBack('/mission-history');
+    // this.router.navigate(['/mission-history']);
+  }
+  
   setClasschange(){
     if(this.clcikCount == 2){
       this.clcikCount =0;

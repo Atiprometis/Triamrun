@@ -8,9 +8,9 @@ import { callCordovaPlugin } from '@ionic-native/core/decorators/common';
 // import { map } from 'rxjs/operator';
 import { Platform } from '@ionic/angular';
 import { Geolocation} from '@ionic-native/geolocation/ngx';
-
+import { Storage } from '@ionic/storage';
 import { Plugins } from '@capacitor/core';
-
+import { NavController } from '@ionic/angular';
 declare var google;
 
 @Component({
@@ -22,6 +22,11 @@ export class RunPage implements OnInit {
   public second = 0;
   public min = 0;
   public hours = 0;
+  public pace = 0;
+  public calorie = 0;
+  public distance = 0.00;
+  userid:any;
+  missionid:any;
   intervalVar: any;
   map:any;    
   marker:any;
@@ -29,11 +34,16 @@ export class RunPage implements OnInit {
   longtitude:any="";
   timestamp:any="";
 
+  onClasschangeClick = {};
+  clcikCount = 0;
+  isShow:boolean = true;
   constructor( 
     public http:Http,
     public runService: RunService,
     public platform:Platform,
     public geolocation:Geolocation,
+    private storage: Storage,
+    private navCtrl: NavController
   ) {
 
    
@@ -58,29 +68,23 @@ export class RunPage implements OnInit {
    }
 
   ngOnInit() {
+    return new Promise(resolve => {
+      this.storage.get('missioninfo').then(missioninfoval => {  
+        this.missionid = missioninfoval[0].level_id;
+        console.log('missioninfoval',this.missionid);
+        console.log('missioninfoval2',missioninfoval[0].level_id);
+      });
+  
+      this.storage.get('userinfo').then(userinfoval => {  
+          this.userid = userinfoval[0].userid;
+        console.log('userinfo',userinfoval);
+        console.log('userinfo1',userinfoval[0].userid);
+  
+      });
+        });
   }
   
-  getDataFunction() {
-    let tmp_resp = [
-      {
-        fname: "A",
-        lname: "B",
-      },
-      {
-        fname: "C",
-        lname: "D",
-      }
-    ];
 
-
-    this.runService.getData()
-      // .map((resp) => resp["full_name"] = resp.fname + " " + resp.lname )
-      .subscribe(resp => {
-        console.log("resp data :", resp);
-        //TODO
-
-      });
-  }
 
   submitDataFunction() {
     let data = {};
@@ -93,6 +97,28 @@ export class RunPage implements OnInit {
         //TODO Error
       });
   }
+  onUsermiss(){
+
+    return new Promise(resolve => {
+      this.storage.get('missioninfo').then(missioninfoval => {  
+        this.missionid = missioninfoval[1].level_id;
+        console.log('missioninfoval',missioninfoval[1].level_id);
+      });
+  
+      this.storage.get('userinfo').then(userinfoval => {  
+          this.userid = userinfoval[0].userid;
+        console.log('userinfo',userinfoval);
+        console.log('userinfo1',userinfoval[0].userid);
+  
+      });
+        });
+
+    
+  }
+// consoloLog(){
+//   console.log('userid : ',this.userid);
+//   console.log('missionlevelid : ',this.missionlevelid);
+// }
 
   onRunrecord() {
     this.intervalVar = setInterval(function () {
@@ -106,12 +132,18 @@ export class RunPage implements OnInit {
         this.min = 0;
       }
     }.bind(this), 1000);
+
  
     let usrl:string = "http://localhost/triamrun/insert_db.php";
      let dataPost = JSON.stringify({
       'hours': this.hours,
       'min': this.min,
       'second': this.second,
+      'pace': this.pace,
+      'calorie': this.calorie,
+      'distance': this.distance,
+      'userid':this.userid,
+      'missionid':this.missionid
      });
 
      let data:Observable<any> = this.runService.postDataURL(usrl,dataPost)
@@ -128,6 +160,11 @@ export class RunPage implements OnInit {
     //   console.log('postDataURL resp :',resp);
     //   });
 
+
+      this.onClasschangeClick = {
+        'contaner-mission-botton2':this.clcikCount==1,
+        
+      }
   }
 
   onTimepause() {
@@ -140,6 +177,11 @@ export class RunPage implements OnInit {
       'hours': this.hours,
       'min': this.min,
       'second': this.second,
+      'pace': this.pace,
+      'calorie': this.calorie,
+      'distance': this.distance,
+      'userid':this.userid,
+      'missionid':this.missionid
      });
 
      let data:Observable<any> = this.runService.postDataURL(usrl,dataPost)
@@ -170,6 +212,11 @@ export class RunPage implements OnInit {
       'hours': this.hours,
       'min': this.min,
       'second': this.second,
+      'pace': this.pace,
+      'calorie': this.calorie,
+      'distance': this.distance,
+      'userid':this.userid,
+      'missionid':this.missionid
      });
 
      let data:Observable<any> = this.runService.postDataURL(usrl,dataPost)
@@ -179,9 +226,17 @@ export class RunPage implements OnInit {
      });
 
     clearInterval(this.intervalVar);
+    this.navCtrl.navigateBack('run-show-miss-challenge');
   }
+  
+  setClasschange(){
 
-
+    
+  }
+  countplus(){
+    this.clcikCount++;
+    console.log(this.clcikCount);
+  }
 
   Geolocation(){
 

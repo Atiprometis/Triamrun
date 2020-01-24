@@ -17,7 +17,7 @@
     <div class="map"></div>
     <div class="wrapper-run-recore">
       <div class="number-km-all">
-        <div class="number-km">0.00</div>
+        <div class="number-km">{{distance}}</div>
         <div class="distance-km">ระยะทาง(กม.)</div>
       </div>
       <div class="time-pace-calorie">
@@ -26,21 +26,24 @@
           <div class="text-time">เวลา</div>
         </div>
         <div class="pace-all">
-          <div class="pace">-</div>
+          <div class="pace">{{pace}}</div>
           <div class="text-pace">PACE</div>
         </div>
         <div class="calorie-all">
-          <div class="calorie">0</div>
+          <div class="calorie">{{calorie}}</div>
           <div class="text-calorie">แคลอรี่</div>
         </div>
       </div>
-      <div class="wrapper-button-run">
- 
+      <!-- <button (click)="consoloLog()">con</button> -->
+      <div class="wrapper-button-run" >
+        <!-- <button (click)="onUsermiss()">missuser</button> -->
+        <!-- <button (click)="countplus()"></button> -->
+
         <ion-button class="button-run" color="triamrun" (click)="onRunrecord()" >
           <ion-icon name="play"  color="light"  class="icon-play"></ion-icon>
         </ion-button>
 
-        <ion-button class="button-run" color="triamrun" (click)="onTimepause()">
+        <ion-button class="button-run" color="triamrun" (click)="onTimepause()" >
           <ion-icon name="pause"  color="light"  class="icon-play"></ion-icon>
         </ion-button>
 

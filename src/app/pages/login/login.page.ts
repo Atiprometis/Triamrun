@@ -75,7 +75,8 @@ export class LoginPage implements OnInit {
       // insert data user to storage this is get data from storage
 
       this.storage.get('userinfo').then((userinfoval) => {   
-      console.log('userinfo',userinfoval);});
+      console.log('userinfo',userinfoval);
+    });
      }),
      error => {
        // this.missionService.hideLoader();

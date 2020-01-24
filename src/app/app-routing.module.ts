@@ -50,7 +50,11 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },  {
+    path: 'run-show-miss-challenge',
+    loadChildren: () => import('./pages/run-show-miss-challenge/run-show-miss-challenge.module').then( m => m.RunShowMissChallengePageModule)
   },
+
 
 
 
