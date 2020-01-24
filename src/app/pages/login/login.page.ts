@@ -4,6 +4,7 @@ import { LoginService } from '../../service/login.service';
 import { Observable } from 'rxjs';
 import { Router} from '@angular/router';
 import { Storage } from '@ionic/storage';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -24,10 +25,12 @@ export class LoginPage implements OnInit {
   constructor(
     public loginService:LoginService,
     private router:Router,
-    private storage: Storage
+    private storage: Storage,
+    public alertController: AlertController
   ) { }
 
   ngOnInit() {
+    this.storage.remove('userinfo');
   }
 
   
@@ -52,7 +55,8 @@ export class LoginPage implements OnInit {
       'email': this.u_email,
       'password': this.u_password,
      });
-     console.log('logindata',this.logindata);
+
+    //  console.log('logindata',this.logindata);
      
      this.loginService.getUserlogin(this.logindata)
 
@@ -61,11 +65,11 @@ export class LoginPage implements OnInit {
       this.userdata = data.json();
 
 
-      console.log('userdata',this.userdata);
+      // console.log('userdata',this.userdata);
   
       this.storage.set('userinfo', this.userdata);
  
-      //  this.router.navigate(['/mission']);
+       this.router.navigate(['/mission']);
       
 
       // insert data user to storage this is get data from storage
@@ -75,6 +79,7 @@ export class LoginPage implements OnInit {
      }),
      error => {
        // this.missionService.hideLoader();
+       
        console.log(error);
  
      };
@@ -82,7 +87,7 @@ export class LoginPage implements OnInit {
 
   }
 
-  getUser(){
+   getUser(){
     this.storage.get('userinfo').then((userinfoval) => {   
 
       console.log('userinfo',userinfoval);

@@ -31,8 +31,8 @@ export class AppComponent {
   }
 
   onLogout(){
-    this.storage.remove(this.keyemail);
-    this.storage.remove(this.keypassword);
+    this.storage.remove('userinfo');
+
     this.router.navigate(['/login']);
   }
 }

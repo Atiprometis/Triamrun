@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { LoadingController } from '@ionic/angular';
+import { userInfo } from 'os';
 
 
 @Injectable({
@@ -68,9 +69,12 @@ export class MissionService {
       }, 1000);
     }
 
-    getMissioninfo(){
-      return this.http.get("http://localhost/triamrun/getmissioninfo.php");
+    urlgetMissioninfo: string= "http://localhost/triamrun/getmissioninfo.php";
 
+    getMissioninfo(userInfo:any){
+
+      return this.http.post(this.urlgetMissioninfo,userInfo);
+      // console.log('userInfo',userInfo);
       
     }
 
